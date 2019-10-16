@@ -33,9 +33,9 @@ class SpecializationSkillExperience(models.Model):
         settings.AUTH_USER_MODEL,
         related_name='UserSpecialization',
         on_delete=models.CASCADE, )
-    specialization = models.OneToOneField(
+    specialization = models.ForeignKey(
         Specialization,
-        verbose_name='SpecializationSkillExperience',
+        related_name='SpecializationSkillExperience',
         on_delete=models.CASCADE,)
     skills = models.ManyToManyField(
         Skill, blank=True, verbose_name="Specialization Skills")
