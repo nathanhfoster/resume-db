@@ -27,13 +27,13 @@ class SettingViewSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
 
-    education = EducationSerializer(
+    UserEducation = EducationSerializer(
         Education, many=True)
 
-    technical_skills = SpecializationSkillExperienceSerializer(
+    UserSpecialization = SpecializationSkillExperienceSerializer(
         SpecializationSkillExperience, many=True)
 
-    experience = ExperienceSerializer(
+    UserExperience = ExperienceSerializer(
         Experience, many=True)
 
     class Meta:

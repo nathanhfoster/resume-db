@@ -3,6 +3,10 @@ from django.conf import settings
 
 
 class Experience(models.Model):
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name='UserExperience',
+        on_delete=models.CASCADE, )
     title = models.CharField(max_length=256)
     company = models.CharField(max_length=256)
     location = models.CharField(max_length=256)

@@ -3,6 +3,10 @@ from django.conf import settings
 
 
 class Education(models.Model):
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name='UserEducation',
+        on_delete=models.CASCADE, )
     shcool = models.CharField(max_length=256)
     degree = models.CharField(max_length=256)
     field_of_study = models.CharField(max_length=256)

@@ -57,15 +57,6 @@ class User(AbstractUser):
 
     profile_uri = models.SlugField(unique=True)
 
-    education = models.ManyToManyField(
-        Education, blank=True, verbose_name="Education")
-
-    technical_skills = models.ManyToManyField(
-        SpecializationSkillExperience, blank=True, verbose_name="Technical Skills")
-
-    experience = models.ManyToManyField(
-        Experience, blank=True, verbose_name="Experience")
-
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
